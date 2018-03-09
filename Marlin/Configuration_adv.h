@@ -193,12 +193,12 @@
 // When first starting the main fan, run it at full speed for the
 // given number of milliseconds.  This gets the fan spinning reliably
 // before setting a PWM value. (Does not work with software PWM for fan on Sanguinololu)
-//#define FAN_KICKSTART_TIME 100
+#define FAN_KICKSTART_TIME 200
 
 // This defines the minimal speed for the main fan, run in PWM mode
 // to enable uncomment and set minimal PWM speed for reliable running (1-255)
 // if fan speed is [1 - (FAN_MIN_PWM-1)] it is set to FAN_MIN_PWM
-//#define FAN_MIN_PWM 50
+#define FAN_MIN_PWM 50
 
 // @section extruder
 
@@ -576,10 +576,10 @@
   //#define LCD_SET_PROGRESS_MANUALLY
 
   // This allows hosts to request long names for files and folders with M33
-  //#define LONG_FILENAME_HOST_SUPPORT
+  #define LONG_FILENAME_HOST_SUPPORT
 
   // Enable this option to scroll long filenames in the SD card menu
-  //#define SCROLL_LONG_FILENAMES
+  #define SCROLL_LONG_FILENAMES
 
   /**
    * This option allows you to abort SD printing when any endstop is triggered.
@@ -676,7 +676,7 @@
  * K=0 means advance disabled.
  * See Marlin documentation for calibration instructions.
  */
-//#define LIN_ADVANCE
+#define LIN_ADVANCE
 
 #if ENABLED(LIN_ADVANCE)
   #define LIN_ADVANCE_K 75
@@ -984,7 +984,7 @@
  * the hardware SPI interface on your board and define the required CS pins
  * in your `pins_MYBOARD.h` file. (e.g., RAMPS 1.4 uses AUX3 pins `X_CS_PIN 53`, `Y_CS_PIN 49`, etc.).
  */
-//#define HAVE_TMC2130
+#define HAVE_TMC2130
 
 /**
  * Enable this for SilentStepStick Trinamic TMC2208 UART-configurable stepper drivers.
@@ -1001,13 +1001,13 @@
 #if ENABLED(HAVE_TMC2130) || ENABLED(HAVE_TMC2208)
 
   // CHOOSE YOUR MOTORS HERE, THIS IS MANDATORY
-  //#define X_IS_TMC2130
+  #define X_IS_TMC2130
   //#define X2_IS_TMC2130
-  //#define Y_IS_TMC2130
+  #define Y_IS_TMC2130
   //#define Y2_IS_TMC2130
-  //#define Z_IS_TMC2130
+  #define Z_IS_TMC2130
   //#define Z2_IS_TMC2130
-  //#define E0_IS_TMC2130
+  #define E0_IS_TMC2130
   //#define E1_IS_TMC2130
   //#define E2_IS_TMC2130
   //#define E3_IS_TMC2130
@@ -1083,7 +1083,7 @@
    * M912 - Clear stepper driver overtemperature pre-warn condition flag.
    * M122 S0/1 - Report driver parameters (Requires TMC_DEBUG)
    */
-  //#define MONITOR_DRIVER_STATUS
+  #define MONITOR_DRIVER_STATUS
 
   #if ENABLED(MONITOR_DRIVER_STATUS)
     #define CURRENT_STEP_DOWN     50  // [mA]
@@ -1097,7 +1097,7 @@
    * STEALTHCHOP needs to be enabled.
    * M913 X/Y/Z/E to live tune the setting
    */
-  //#define HYBRID_THRESHOLD
+  #define HYBRID_THRESHOLD
 
   #define X_HYBRID_THRESHOLD     100  // [mm/s]
   #define X2_HYBRID_THRESHOLD    100
@@ -1123,7 +1123,7 @@
    * It is advised to set X/Y_HOME_BUMP_MM to 0.
    * M914 X/Y to live tune the setting
    */
-  //#define SENSORLESS_HOMING // TMC2130 only
+  #define SENSORLESS_HOMING // TMC2130 only
 
   #if ENABLED(SENSORLESS_HOMING)
     #define X_HOMING_SENSITIVITY  8
