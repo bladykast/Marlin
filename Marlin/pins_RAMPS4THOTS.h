@@ -70,11 +70,13 @@
 // Limit Switches
 //
 #define X_MIN_PIN           3
-//#define X_MAX_PIN           2
-#define Y_MIN_PIN          2
-//#define Y_MAX_PIN          15
-#define Z_MIN_PIN          15
-#define Z_MAX_PIN          14
+#ifndef X_MAX_PIN
+  #define X_MAX_PIN         2
+#endif
+#define Y_MIN_PIN          14
+#define Y_MAX_PIN          15
+#define Z_MIN_PIN          18
+#define Z_MAX_PIN          19
 
 //
 // Z Probe (when not Z_MIN_PIN)
@@ -89,22 +91,22 @@
 #define X_STEP_PIN         54
 #define X_DIR_PIN          55
 #define X_ENABLE_PIN       38
-#define X_CS_PIN           18
+#define X_CS_PIN           42 //53
 
 #define Y_STEP_PIN         60
 #define Y_DIR_PIN          61
 #define Y_ENABLE_PIN       56
-#define Y_CS_PIN           19
+#define Y_CS_PIN           44 //49
 
 #define Z_STEP_PIN         46
 #define Z_DIR_PIN          48
 #define Z_ENABLE_PIN       62
-#define Z_CS_PIN           20
+#define Z_CS_PIN           40
 
 #define E0_STEP_PIN        26
 #define E0_DIR_PIN         28
 #define E0_ENABLE_PIN      24
-#define E0_CS_PIN          21
+#define E0_CS_PIN          42
 
 #define E1_STEP_PIN        36
 #define E1_DIR_PIN         34
@@ -197,7 +199,7 @@
 // Heaters / Fans
 //
 #ifndef MOSFET_D_PIN
-  #define MOSFET_D_PIN  5
+  #define MOSFET_D_PIN  -1
 #endif
 #ifndef RAMPS_D8_PIN
   #define RAMPS_D8_PIN   8
