@@ -14081,6 +14081,7 @@ void manage_inactivity(bool ignore_stepper_queue/*=false*/) {
       SERIAL_ERROR_START();
       SERIAL_ERRORLNPGM(MSG_KILL_BUTTON);
       kill(PSTR(MSG_KILLED));
+      
     }
   #endif
 
